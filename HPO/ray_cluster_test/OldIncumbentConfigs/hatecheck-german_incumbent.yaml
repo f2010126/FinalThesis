@@ -1,0 +1,31 @@
+aug: false
+incumbent_for: hatecheck-german
+model_config:
+  dataset:
+    average_text_length: 8.676712328767124
+    batch: 4
+    name: hatecheck-german
+    num_labels: 7
+    num_training_samples: 1825
+    seq_length: 512
+  model: uklfr/gottbert-base
+  optimizer:
+    adam_epsilon: 1.737637736719633e-07
+    lr: 3.058212901374361e-05
+    momentum: 0.9
+    scheduler: linear_with_warmup
+    type: AdamW
+    weight_decay: 5.001283723896379e-05
+  training:
+    gradient_accumulation: 1
+    warmup: 10
+run_info: '[{"budget": 2.0, "info": {"val_acc": 0.9886363744735718, "ptl/val_f1":
+  0.9834517240524292, "val_acc_epoch": 0.9886363744735718, "train_f1": 1.0, "val_loss_epoch":
+  0.07206267863512039, "val_f1": 0.9881628155708313, "train_loss": 0.06182282418012619,
+  "ptl/val_loss": 0.1532435417175293, "val_loss": 0.07206267863512039, "val_f1_epoch":
+  0.9881628155708313, "ptl/val_accuracy": 0.984375, "train_acc": 1.0}}, {"budget":
+  12.0, "info": {"train_f1": 1.0, "train_loss": 0.0039811525493860245, "ptl/val_f1":
+  0.9954506158828735, "val_loss": 0.0025963447988033295, "val_acc_epoch": 1.0, "ptl/val_loss":
+  0.02360512502491474, "val_f1": 1.0, "train_acc": 1.0, "val_loss_epoch": 0.0025963447988033295,
+  "ptl/val_accuracy": 0.9952651858329773, "val_acc": 1.0, "val_f1_epoch": 1.0}}]'
+seed: 42

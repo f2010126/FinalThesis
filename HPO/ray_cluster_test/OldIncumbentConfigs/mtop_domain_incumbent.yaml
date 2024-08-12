@@ -1,0 +1,32 @@
+aug: false
+incumbent_for: mtop_domain
+model_config:
+  dataset:
+    average_text_length: 7.041194874851013
+    batch: 16
+    name: mtop_domain
+    num_labels: 11
+    num_training_samples: 13424
+    seq_length: 128
+  model: uklfr/gottbert-base
+  optimizer:
+    adam_epsilon: 3.208861853620169e-07
+    lr: 3.693483277347684e-05
+    momentum: 0.9
+    scheduler: linear_with_warmup
+    type: Adam
+    weight_decay: 1.8820370069937354e-05
+  training:
+    gradient_accumulation: 1
+    warmup: 100
+run_info: '[{"budget": 1.153846153846154, "info": {"train_acc": 1.0, "val_acc_epoch":
+  0.9807268977165222, "ptl/val_accuracy": 0.9808114171028137, "ptl/val_loss": 0.08798527717590332,
+  "val_f1": 0.9800145626068115, "val_loss_epoch": 0.0881594717502594, "ptl/val_f1":
+  0.9801021814346313, "val_loss": 0.0881594717502594, "train_loss": 0.06502898037433624,
+  "train_f1": 1.0, "val_acc": 0.9807268977165222, "val_f1_epoch": 0.9800145626068115}},
+  {"budget": 15.0, "info": {"train_acc": 1.0, "val_acc_epoch": 0.9812775254249573,
+  "ptl/val_accuracy": 0.9793616533279419, "ptl/val_loss": 0.09856829792261124, "val_f1":
+  0.9799813032150269, "val_loss_epoch": 0.0997522845864296, "ptl/val_f1": 0.9787033796310425,
+  "val_loss": 0.0997522845864296, "train_loss": 0.0006100736791267991, "train_f1":
+  1.0, "val_acc": 0.9812775254249573, "val_f1_epoch": 0.9799813032150269}}]'
+seed: 42

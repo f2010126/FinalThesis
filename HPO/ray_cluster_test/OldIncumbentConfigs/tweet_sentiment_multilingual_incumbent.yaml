@@ -1,0 +1,89 @@
+aug: false
+incumbent_for: tweet_sentiment_multilingual
+model_config:
+  dataset:
+    average_text_length: 11.43121261555193
+    batch: 8
+    name: tweet_sentiment_multilingual
+    num_labels: 3
+    num_training_samples: 1839
+    seq_length: 256
+  model: dbmdz/distilbert-base-german-europeana-cased
+  optimizer:
+    adam_epsilon: 1.336219882508119e-08
+    lr: 2.131473240804992e-05
+    momentum: 0.9
+    scheduler: constant_with_warmup
+    type: SGD
+    weight_decay: 0.00013894734616649466
+  training:
+    gradient_accumulation: 1
+    warmup: 10
+run_info: '[{"budget": 1.153846153846154, "info": {"error": "Trail failed---> The
+  Ray Train run failed. Please inspect the previous error messages for a cause. After
+  fixing the issue (assuming that the error is not caused by your own application
+  logic, but rather an error such as OOM), you can restart the run from scratch or
+  continue this run.\nTo continue this run, you can use: `trainer = TorchTrainer.restore(\"/home/dsengupt/ray_results/TorchTrainer_2024-04-12_11-44-08\")`.\nTo
+  start a new run that will retry on training failures, set `train.RunConfig(failure_config=train.FailureConfig(max_failures))`
+  in the Trainer''s `run_config` with `max_failures > 0`, or `max_failures = -1` for
+  unlimited retries.", "traceback": "ray.exceptions.RayTaskError(FileNotFoundError):
+  \u001b[36mray::_Inner.train()\u001b[39m (pid=6204, ip=10.5.166.166, actor_id=8aa258b594e65e69860eab8a02000000,
+  repr=TorchTrainer)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py\",
+  line 342, in train\n    raise skipped from exception_cause(skipped)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/utils.py\",
+  line 43, in check_for_failure\n    ray.get(object_ref)\nray.exceptions.RayTaskError(FileNotFoundError):
+  \u001b[36mray::_RayTrainWorker__execute.get_next()\u001b[39m (pid=6769, ip=10.5.166.166,
+  actor_id=7b8d54c6e56081783994b80e02000000, repr=<ray.train._internal.worker_group.RayTrainWorker
+  object at 0x7ce10ebc6370>)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/worker_group.py\",
+  line 33, in __execute\n    raise skipped from exception_cause(skipped)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/utils.py\",
+  line 118, in discard_return_wrapper\n    train_func(*args, **kwargs)\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/bohb_ray.py\",
+  line 66, in transformer_train_function\n    dm.setup(\"fit\")\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/data_modules.py\",
+  line 151, in setup\n    self.prepare_raw_data()\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/data_modules.py\",
+  line 565, in prepare_raw_data\n    dataset = datasets.load_from_disk(os.path.join(raw_data_path,
+  data_folder))\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/datasets/load.py\",
+  line 2663, in load_from_disk\n    raise FileNotFoundError(f\"Directory {dataset_path}
+  not found\")\nFileNotFoundError: Directory /home/dsengupt/ray_results/TorchTrainer_2024-04-12_11-44-08/TorchTrainer_36e5a_00000_0_2024-04-12_11-44-10/raw_datasets/tweet_sentiment_multilingual
+  not found\n\nThe above exception was the direct cause of the following exception:\n\nTraceback
+  (most recent call last):\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/bohb_ray_cluster.py\",
+  line 75, in compute\n    result = trainer.fit()\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/base_trainer.py\",
+  line 640, in fit\n    raise TrainingFailedError(\nray.train.base_trainer.TrainingFailedError:
+  The Ray Train run failed. Please inspect the previous error messages for a cause.
+  After fixing the issue (assuming that the error is not caused by your own application
+  logic, but rather an error such as OOM), you can restart the run from scratch or
+  continue this run.\nTo continue this run, you can use: `trainer = TorchTrainer.restore(\"/home/dsengupt/ray_results/TorchTrainer_2024-04-12_11-44-08\")`.\nTo
+  start a new run that will retry on training failures, set `train.RunConfig(failure_config=train.FailureConfig(max_failures))`
+  in the Trainer''s `run_config` with `max_failures > 0`, or `max_failures = -1` for
+  unlimited retries.\n"}}, {"budget": 15.0, "info": {"error": "Trail failed---> The
+  Ray Train run failed. Please inspect the previous error messages for a cause. After
+  fixing the issue (assuming that the error is not caused by your own application
+  logic, but rather an error such as OOM), you can restart the run from scratch or
+  continue this run.\nTo continue this run, you can use: `trainer = TorchTrainer.restore(\"/home/dsengupt/ray_results/TorchTrainer_2024-04-12_11-45-34\")`.\nTo
+  start a new run that will retry on training failures, set `train.RunConfig(failure_config=train.FailureConfig(max_failures))`
+  in the Trainer''s `run_config` with `max_failures > 0`, or `max_failures = -1` for
+  unlimited retries.", "traceback": "types.RayTaskError(FileNotFoundError): \u001b[36mray::_Inner.train()\u001b[39m
+  (pid=9565, ip=10.5.166.166, actor_id=6d717afd2a92bc8ddfc2bbc301000000, repr=TorchTrainer)\n  File
+  \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py\",
+  line 342, in train\n    raise skipped from exception_cause(skipped)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/utils.py\",
+  line 43, in check_for_failure\n    ray.get(object_ref)\nray.exceptions.RayTaskError(FileNotFoundError):
+  \u001b[36mray::_RayTrainWorker__execute.get_next()\u001b[39m (pid=10078, ip=10.5.166.166,
+  actor_id=2bbe4791aa1c8138d2787ef401000000, repr=<ray.train._internal.worker_group.RayTrainWorker
+  object at 0x7e3783174400>)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/worker_group.py\",
+  line 33, in __execute\n    raise skipped from exception_cause(skipped)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/utils.py\",
+  line 118, in discard_return_wrapper\n    train_func(*args, **kwargs)\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/bohb_ray.py\",
+  line 66, in transformer_train_function\n    dm.setup(\"fit\")\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/data_modules.py\",
+  line 151, in setup\n    self.prepare_raw_data()\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/data_modules.py\",
+  line 565, in prepare_raw_data\n    dataset = datasets.load_from_disk(os.path.join(raw_data_path,
+  data_folder))\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/datasets/load.py\",
+  line 2663, in load_from_disk\n    raise FileNotFoundError(f\"Directory {dataset_path}
+  not found\")\nFileNotFoundError: Directory /home/dsengupt/ray_results/TorchTrainer_2024-04-12_11-45-34/TorchTrainer_68d40_00000_0_2024-04-12_11-45-34/raw_datasets/tweet_sentiment_multilingual
+  not found\n\nThe above exception was the direct cause of the following exception:\n\nTraceback
+  (most recent call last):\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/bohb_ray_cluster.py\",
+  line 75, in compute\n    result = trainer.fit()\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/base_trainer.py\",
+  line 640, in fit\n    raise TrainingFailedError(\nray.train.base_trainer.TrainingFailedError:
+  The Ray Train run failed. Please inspect the previous error messages for a cause.
+  After fixing the issue (assuming that the error is not caused by your own application
+  logic, but rather an error such as OOM), you can restart the run from scratch or
+  continue this run.\nTo continue this run, you can use: `trainer = TorchTrainer.restore(\"/home/dsengupt/ray_results/TorchTrainer_2024-04-12_11-45-34\")`.\nTo
+  start a new run that will retry on training failures, set `train.RunConfig(failure_config=train.FailureConfig(max_failures))`
+  in the Trainer''s `run_config` with `max_failures > 0`, or `max_failures = -1` for
+  unlimited retries.\n"}}]'
+seed: 42

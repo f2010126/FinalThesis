@@ -1,0 +1,221 @@
+aug: false
+incumbent_for: miam
+model_config:
+  dataset:
+    average_text_length: 5.827414205905826
+    batch: 4
+    name: miam
+    num_labels: 31
+    num_training_samples: 25060
+    seq_length: 128
+  model: bert-base-uncased
+  optimizer:
+    adam_epsilon: 2.520817546179788e-07
+    lr: 6.179500020478449e-05
+    momentum: 0.9
+    scheduler: linear_with_warmup
+    type: RAdam
+    weight_decay: 0.0009101355578069496
+  training:
+    gradient_accumulation: 4
+    warmup: 100
+run_info: '[{"budget": 12.0, "info": {"error": "Trail failed---> The Ray Train run
+  failed. Please inspect the previous error messages for a cause. After fixing the
+  issue (assuming that the error is not caused by your own application logic, but
+  rather an error such as OOM), you can restart the run from scratch or continue this
+  run.\nTo continue this run, you can use: `trainer = TorchTrainer.restore(\"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/datasetruns/miam_1X_16Labels_BohbAugmented_12_6/ray_results/TorchTrainer_2024-05-15_20-04-44\")`.\nTo
+  start a new run that will retry on training failures, set `train.RunConfig(failure_config=train.FailureConfig(max_failures))`
+  in the Trainer''s `run_config` with `max_failures > 0`, or `max_failures = -1` for
+  unlimited retries.", "traceback": "ray.exceptions.RayTaskError(RuntimeError): \u001b[36mray::_Inner.train()\u001b[39m
+  (pid=13562, ip=10.5.166.197, actor_id=110553b535857c684f23a82901000000, repr=TorchTrainer)\n  File
+  \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py\",
+  line 331, in train\n    raise skipped from exception_cause(skipped)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/air/_internal/util.py\",
+  line 98, in run\n    self._ret = self._target(*self._args, **self._kwargs)\n  File
+  \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/tune/trainable/function_trainable.py\",
+  line 45, in <lambda>\n    training_func=lambda: self._trainable_func(self.config),\n  File
+  \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/base_trainer.py\",
+  line 799, in _trainable_func\n    super()._trainable_func(self._merged_config)\n  File
+  \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/tune/trainable/function_trainable.py\",
+  line 248, in _trainable_func\n    output = fn()\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/base_trainer.py\",
+  line 107, in _train_coordinator_fn\n    trainer.training_loop()\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/data_parallel_trainer.py\",
+  line 458, in training_loop\n    backend_executor.start()\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/backend_executor.py\",
+  line 190, in start\n    self._backend.on_start(self.worker_group, self._backend_config)\n  File
+  \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/torch/config.py\",
+  line 197, in on_start\n    ray.get(setup_futures)\nray.exceptions.RayTaskError(RuntimeError):
+  \u001b[36mray::_RayTrainWorker__execute._setup_torch_process_group()\u001b[39m (pid=13713,
+  ip=10.5.166.197, actor_id=418c9196b18505fd72461b2501000000, repr=<ray.train._internal.worker_group.RayTrainWorker
+  object at 0x7bba281358b0>)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/worker_group.py\",
+  line 33, in __execute\n    raise skipped from exception_cause(skipped)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/_internal/worker_group.py\",
+  line 30, in __execute\n    return func(*args, **kwargs)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/torch/config.py\",
+  line 112, in _setup_torch_process_group\n    dist.init_process_group(\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/torch/distributed/c10d_logger.py\",
+  line 74, in wrapper\n    func_return = func(*args, **kwargs)\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py\",
+  line 1148, in init_process_group\n    default_pg, _ = _new_process_group_helper(\n  File
+  \"/home/dsengupt/ray_env/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py\",
+  line 1279, in _new_process_group_helper\n    backend_class = ProcessGroupNCCL(backend_prefix_store,
+  group_rank, group_size, pg_options)\nRuntimeError: ProcessGroupNCCL is only supported
+  with GPUs, no GPUs found!\nException raised from ProcessGroupNCCL at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:636
+  (most recent call first):\nframe #0: c10::Error::Error(c10::SourceLocation, std::string)
+  + 0x57 (0x7bba202d4617 in /home/dsengupt/ray_env/lib/python3.9/site-packages/torch/lib/libc10.so)\nframe
+  #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, char const*)
+  + 0x68 (0x7bba2028fa56 in /home/dsengupt/ray_env/lib/python3.9/site-packages/torch/lib/libc10.so)\nframe
+  #2: c10d::ProcessGroupNCCL::ProcessGroupNCCL(c10::intrusive_ptr<c10d::Store, c10::detail::intrusive_target_default_null_type<c10d::Store>
+  > const&, int, int, c10::intrusive_ptr<c10d::ProcessGroupNCCL::Options, c10::detail::intrusive_target_default_null_type<c10d::ProcessGroupNCCL::Options>
+  >) + 0xd67 (0x7bb94fb48e17 in /home/dsengupt/ray_env/lib/python3.9/site-packages/torch/lib/libtorch_cuda.so)\nframe
+  #3: <unknown function> + 0xc0db39 (0x7bb9d1a35b39 in /home/dsengupt/ray_env/lib/python3.9/site-packages/torch/lib/libtorch_python.so)\nframe
+  #4: <unknown function> + 0x3eea4f (0x7bb9d1216a4f in /home/dsengupt/ray_env/lib/python3.9/site-packages/torch/lib/libtorch_python.so)\nframe
+  #5: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x507387]\nframe
+  #6: _PyObject_MakeTpCall + 0x2ec (0x4f073c in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #7: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x505313]\nframe
+  #8: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x502a80]\nframe
+  #9: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4f0bea]\nframe
+  #10: <unknown function> + 0x3ed369 (0x7bb9d1215369 in /home/dsengupt/ray_env/lib/python3.9/site-packages/torch/lib/libtorch_python.so)\nframe
+  #11: _PyObject_MakeTpCall + 0x2ec (0x4f073c in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #12: _PyEval_EvalFrameDefault + 0x4b5a (0x4ec58a in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #13: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4e6b2a]\nframe
+  #14: _PyFunction_Vectorcall + 0xd4 (0x4f7e54 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #15: _PyEval_EvalFrameDefault + 0x1231 (0x4e8c61 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #16: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4e6b2a]\nframe
+  #17: _PyFunction_Vectorcall + 0xd4 (0x4f7e54 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #18: PyObject_Call + 0xb4 (0x5057d4 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #19: _PyEval_EvalFrameDefault + 0x3e14 (0x4eb844 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #20: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4e6b2a]\nframe
+  #21: _PyFunction_Vectorcall + 0xd4 (0x4f7e54 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #22: _PyEval_EvalFrameDefault + 0x1231 (0x4e8c61 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #23: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4e6b2a]\nframe
+  #24: _PyFunction_Vectorcall + 0xd4 (0x4f7e54 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #25: PyObject_Call + 0xb4 (0x5057d4 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #26: _PyEval_EvalFrameDefault + 0x3e14 (0x4eb844 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #27: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4e6b2a]\nframe
+  #28: _PyFunction_Vectorcall + 0xd4 (0x4f7e54 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #29: PyObject_Call + 0xb4 (0x5057d4 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #30: _PyEval_EvalFrameDefault + 0x3e14 (0x4eb844 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #31: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4e6b2a]\nframe
+  #32: _PyFunction_Vectorcall + 0xd4 (0x4f7e54 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #33: PyObject_Call + 0xb4 (0x5057d4 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #34: _PyEval_EvalFrameDefault + 0x3e14 (0x4eb844 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #35: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4e6b2a]\nframe
+  #36: _PyFunction_Vectorcall + 0xd4 (0x4f7e54 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #37: PyVectorcall_Call + 0x87 (0x505a57 in ray::_RayTrainWorker__execute._setup_torch_process_group)\nframe
+  #38: <unknown function> + 0x5bc3bf (0x7be0b923e3bf in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #39: <unknown function> + 0x627228 (0x7be0b92a9228 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #40: <unknown function> + 0x5bc3bf (0x7be0b923e3bf in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #41: <unknown function> + 0x68aa23 (0x7be0b930ca23 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #42: std::_Function_handler<ray::Status (ray::rpc::Address const&, ray::rpc::TaskType,
+  std::string, ray::core::RayFunction const&, std::unordered_map<std::string, double,
+  std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<std::string
+  const, double> > > const&, std::vector<std::shared_ptr<ray::RayObject>, std::allocator<std::shared_ptr<ray::RayObject>
+  > > const&, std::vector<ray::rpc::ObjectReference, std::allocator<ray::rpc::ObjectReference>
+  > const&, std::string const&, std::string const&, std::vector<std::pair<ray::ObjectID,
+  std::shared_ptr<ray::RayObject> >, std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject>
+  > > >*, std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> >,
+  std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> > > >*,
+  std::vector<std::pair<ray::ObjectID, bool>, std::allocator<std::pair<ray::ObjectID,
+  bool> > >*, std::shared_ptr<ray::LocalMemoryBuffer>&, bool*, std::string*, std::vector<ray::ConcurrencyGroup,
+  std::allocator<ray::ConcurrencyGroup> > const&, std::string, bool, bool, bool, long),
+  ray::Status (*)(ray::rpc::Address const&, ray::rpc::TaskType, std::string, ray::core::RayFunction
+  const&, std::unordered_map<std::string, double, std::hash<std::string>, std::equal_to<std::string>,
+  std::allocator<std::pair<std::string const, double> > > const&, std::vector<std::shared_ptr<ray::RayObject>,
+  std::allocator<std::shared_ptr<ray::RayObject> > > const&, std::vector<ray::rpc::ObjectReference,
+  std::allocator<ray::rpc::ObjectReference> > const&, std::string, std::string, std::vector<std::pair<ray::ObjectID,
+  std::shared_ptr<ray::RayObject> >, std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject>
+  > > >*, std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> >,
+  std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> > > >*,
+  std::vector<std::pair<ray::ObjectID, bool>, std::allocator<std::pair<ray::ObjectID,
+  bool> > >*, std::shared_ptr<ray::LocalMemoryBuffer>&, bool*, std::string*, std::vector<ray::ConcurrencyGroup,
+  std::allocator<ray::ConcurrencyGroup> > const&, std::string, bool, bool, bool, long)>::_M_invoke(std::_Any_data
+  const&, ray::rpc::Address const&, ray::rpc::TaskType&&, std::string&&, ray::core::RayFunction
+  const&, std::unordered_map<std::string, double, std::hash<std::string>, std::equal_to<std::string>,
+  std::allocator<std::pair<std::string const, double> > > const&, std::vector<std::shared_ptr<ray::RayObject>,
+  std::allocator<std::shared_ptr<ray::RayObject> > > const&, std::vector<ray::rpc::ObjectReference,
+  std::allocator<ray::rpc::ObjectReference> > const&, std::string const&, std::string
+  const&, std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> >,
+  std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> > > >*&&,
+  std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> >, std::allocator<std::pair<ray::ObjectID,
+  std::shared_ptr<ray::RayObject> > > >*&&, std::vector<std::pair<ray::ObjectID, bool>,
+  std::allocator<std::pair<ray::ObjectID, bool> > >*&&, std::shared_ptr<ray::LocalMemoryBuffer>&,
+  bool*&&, std::string*&&, std::vector<ray::ConcurrencyGroup, std::allocator<ray::ConcurrencyGroup>
+  > const&, std::string&&, bool&&, bool&&, bool&&, long&&) + 0x169 (0x7be0b9244079
+  in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe #43:
+  ray::core::CoreWorker::ExecuteTask(ray::TaskSpecification const&, std::shared_ptr<std::unordered_map<std::string,
+  std::vector<std::pair<long, double>, std::allocator<std::pair<long, double> > >,
+  std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<std::string
+  const, std::vector<std::pair<long, double>, std::allocator<std::pair<long, double>
+  > > > > > > const&, std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject>
+  >, std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> > > >*,
+  std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> >, std::allocator<std::pair<ray::ObjectID,
+  std::shared_ptr<ray::RayObject> > > >*, std::vector<std::pair<ray::ObjectID, bool>,
+  std::allocator<std::pair<ray::ObjectID, bool> > >*, google::protobuf::RepeatedPtrField<ray::rpc::ObjectReferenceCount>*,
+  bool*, std::string*) + 0xd54 (0x7be0b9434c24 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #44: std::_Function_handler<ray::Status (ray::TaskSpecification const&, std::shared_ptr<std::unordered_map<std::string,
+  std::vector<std::pair<long, double>, std::allocator<std::pair<long, double> > >,
+  std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<std::string
+  const, std::vector<std::pair<long, double>, std::allocator<std::pair<long, double>
+  > > > > > >, std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject>
+  >, std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> > > >*,
+  std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> >, std::allocator<std::pair<ray::ObjectID,
+  std::shared_ptr<ray::RayObject> > > >*, std::vector<std::pair<ray::ObjectID, bool>,
+  std::allocator<std::pair<ray::ObjectID, bool> > >*, google::protobuf::RepeatedPtrField<ray::rpc::ObjectReferenceCount>*,
+  bool*, std::string*), std::_Bind<ray::Status (ray::core::CoreWorker::*(ray::core::CoreWorker*,
+  std::_Placeholder<1>, std::_Placeholder<2>, std::_Placeholder<3>, std::_Placeholder<4>,
+  std::_Placeholder<5>, std::_Placeholder<6>, std::_Placeholder<7>, std::_Placeholder<8>))(ray::TaskSpecification
+  const&, std::shared_ptr<std::unordered_map<std::string, std::vector<std::pair<long,
+  double>, std::allocator<std::pair<long, double> > >, std::hash<std::string>, std::equal_to<std::string>,
+  std::allocator<std::pair<std::string const, std::vector<std::pair<long, double>,
+  std::allocator<std::pair<long, double> > > > > > > const&, std::vector<std::pair<ray::ObjectID,
+  std::shared_ptr<ray::RayObject> >, std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject>
+  > > >*, std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> >,
+  std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> > > >*,
+  std::vector<std::pair<ray::ObjectID, bool>, std::allocator<std::pair<ray::ObjectID,
+  bool> > >*, google::protobuf::RepeatedPtrField<ray::rpc::ObjectReferenceCount>*,
+  bool*, std::string*)> >::_M_invoke(std::_Any_data const&, ray::TaskSpecification
+  const&, std::shared_ptr<std::unordered_map<std::string, std::vector<std::pair<long,
+  double>, std::allocator<std::pair<long, double> > >, std::hash<std::string>, std::equal_to<std::string>,
+  std::allocator<std::pair<std::string const, std::vector<std::pair<long, double>,
+  std::allocator<std::pair<long, double> > > > > > >&&, std::vector<std::pair<ray::ObjectID,
+  std::shared_ptr<ray::RayObject> >, std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject>
+  > > >*&&, std::vector<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> >,
+  std::allocator<std::pair<ray::ObjectID, std::shared_ptr<ray::RayObject> > > >*&&,
+  std::vector<std::pair<ray::ObjectID, bool>, std::allocator<std::pair<ray::ObjectID,
+  bool> > >*&&, google::protobuf::RepeatedPtrField<ray::rpc::ObjectReferenceCount>*&&,
+  bool*&&, std::string*&&) + 0x58 (0x7be0b9367fa8 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #45: <unknown function> + 0x7db034 (0x7be0b945d034 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #46: <unknown function> + 0x7dc37a (0x7be0b945e37a in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #47: <unknown function> + 0x7f32be (0x7be0b94752be in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #48: ray::core::ActorSchedulingQueue::AcceptRequestOrRejectIfCanceled(ray::TaskID,
+  ray::core::InboundRequest&) + 0x114 (0x7be0b94762d4 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #49: <unknown function> + 0x7f6efb (0x7be0b9478efb in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #50: ray::core::ActorSchedulingQueue::Add(long, long, std::function<void (std::function<void
+  (ray::Status, std::function<void ()>, std::function<void ()>)>)>, std::function<void
+  (ray::Status const&, std::function<void (ray::Status, std::function<void ()>, std::function<void
+  ()>)>)>, std::function<void (ray::Status, std::function<void ()>, std::function<void
+  ()>)>, std::string const&, std::shared_ptr<ray::FunctionDescriptorInterface> const&,
+  ray::TaskID, std::vector<ray::rpc::ObjectReference, std::allocator<ray::rpc::ObjectReference>
+  > const&) + 0x400 (0x7be0b947aa10 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #51: ray::core::CoreWorkerDirectTaskReceiver::HandleTask(ray::rpc::PushTaskRequest
+  const&, ray::rpc::PushTaskReply*, std::function<void (ray::Status, std::function<void
+  ()>, std::function<void ()>)>) + 0x119c (0x7be0b945c98c in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #52: <unknown function> + 0x77bb45 (0x7be0b93fdb45 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #53: <unknown function> + 0xa578fe (0x7be0b96d98fe in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #54: <unknown function> + 0xa50cee (0x7be0b96d2cee in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #55: <unknown function> + 0xa51166 (0x7be0b96d3166 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #56: <unknown function> + 0x1100aeb (0x7be0b9d82aeb in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #57: <unknown function> + 0x1102469 (0x7be0b9d84469 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #58: <unknown function> + 0x1102b72 (0x7be0b9d84b72 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #59: ray::core::CoreWorker::RunTaskExecutionLoop() + 0xcd (0x7be0b93fc5dd in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #60: ray::core::CoreWorkerProcessImpl::RunWorkerTaskExecutionLoop() + 0x8c (0x7be0b94410fc
+  in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe #61:
+  ray::core::CoreWorkerProcess::RunTaskExecutionLoop() + 0x1d (0x7be0b94412ad in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #62: <unknown function> + 0x5bd157 (0x7be0b923f157 in /home/dsengupt/ray_env/lib/python3.9/site-packages/ray/_raylet.so)\nframe
+  #63: ray::_RayTrainWorker__execute._setup_torch_process_group() [0x4fcad8]\n\nThe
+  above exception was the direct cause of the following exception:\n\nTraceback (most
+  recent call last):\n  File \"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/bohb_ray_cluster.py\",
+  line 75, in compute\n    result = trainer.fit()\n  File \"/home/dsengupt/ray_env/lib/python3.9/site-packages/ray/train/base_trainer.py\",
+  line 638, in fit\n    raise TrainingFailedError(\nray.train.base_trainer.TrainingFailedError:
+  The Ray Train run failed. Please inspect the previous error messages for a cause.
+  After fixing the issue (assuming that the error is not caused by your own application
+  logic, but rather an error such as OOM), you can restart the run from scratch or
+  continue this run.\nTo continue this run, you can use: `trainer = TorchTrainer.restore(\"/work/dlclarge1/dsengupt-zap_hpo_og/TinyBert/HPO/ray_cluster_test/BoHBCode/datasetruns/miam_1X_16Labels_BohbAugmented_12_6/ray_results/TorchTrainer_2024-05-15_20-04-44\")`.\nTo
+  start a new run that will retry on training failures, set `train.RunConfig(failure_config=train.FailureConfig(max_failures))`
+  in the Trainer''s `run_config` with `max_failures > 0`, or `max_failures = -1` for
+  unlimited retries.\n"}}]'
+seed: 42

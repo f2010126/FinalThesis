@@ -1,0 +1,31 @@
+aug: false
+incumbent_for: tagesschau
+model_config:
+  dataset:
+    average_text_length: 500.0725
+    batch: 4
+    name: tagesschau
+    num_labels: 7
+    num_training_samples: 1200
+    seq_length: 128
+  model: deepset/bert-base-german-cased-oldvocab
+  optimizer:
+    adam_epsilon: 1.1162376004045898e-07
+    lr: 5.005859700892054e-05
+    momentum: 0.9
+    scheduler: cosine_with_warmup
+    type: Adam
+    weight_decay: 0.0003999716203225184
+  training:
+    gradient_accumulation: 1
+    warmup: 10
+run_info: '[{"budget": 2.0, "info": {"train_f1": 1.0, "ptl/val_accuracy": 0.9166666865348816,
+  "val_loss": 0.11321283876895905, "val_acc": 0.976190447807312, "val_f1": 0.9746031761169434,
+  "val_loss_epoch": 0.11321283876895905, "train_acc": 1.0, "val_f1_epoch": 0.9746031761169434,
+  "ptl/val_loss": 0.14778688549995422, "train_loss": 0.03951811417937279, "ptl/val_f1":
+  0.9138889312744141, "val_acc_epoch": 0.976190447807312}}, {"budget": 12.0, "info":
+  {"train_f1": 1.0, "ptl/val_accuracy": 0.9826388955116272, "val_loss": 0.0068506463430821896,
+  "val_acc": 1.0, "val_f1": 1.0, "val_loss_epoch": 0.0068506463430821896, "train_acc":
+  1.0, "val_f1_epoch": 1.0, "ptl/val_loss": 0.04468037188053131, "train_loss": 0.0009719469817355275,
+  "ptl/val_f1": 0.9819444417953491, "val_acc_epoch": 1.0}}]'
+seed: 42

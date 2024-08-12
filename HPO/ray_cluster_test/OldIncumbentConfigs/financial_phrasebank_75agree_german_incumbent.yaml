@@ -1,0 +1,32 @@
+aug: false
+incumbent_for: financial_phrasebank_75agree_german
+model_config:
+  dataset:
+    average_text_length: 19.615997104596453
+    batch: 4
+    name: financial_phrasebank_75agree_german
+    num_labels: 3
+    num_training_samples: 2763
+    seq_length: 512
+  model: uklfr/gottbert-base
+  optimizer:
+    adam_epsilon: 4.0299996910769996e-07
+    lr: 4.128480459200537e-05
+    momentum: 0.9
+    scheduler: cosine_with_hard_restarts_with_warmup
+    type: AdamW
+    weight_decay: 0.0005248340367730524
+  training:
+    gradient_accumulation: 4
+    warmup: 10
+run_info: '[{"budget": 1.9230769230769231, "info": {"ptl/val_accuracy": 0.9069767594337463,
+  "val_f1_epoch": 0.9079180955886841, "ptl/val_loss": 0.2505623996257782, "train_f1":
+  1.0, "val_f1": 0.9079180955886841, "train_acc": 1.0, "val_loss_epoch": 0.2505623698234558,
+  "val_acc": 0.9069767594337463, "val_loss": 0.2505623698234558, "val_acc_epoch":
+  0.9069767594337463, "ptl/val_f1": 0.9079180955886841, "train_loss": 0.09035570919513702}},
+  {"budget": 25.0, "info": {"ptl/val_accuracy": 0.9268604516983032, "val_f1_epoch":
+  0.929651141166687, "ptl/val_loss": 0.34400561451911926, "train_f1": 1.0, "val_f1":
+  0.929651141166687, "train_acc": 1.0, "val_loss_epoch": 0.42652812600135803, "val_acc":
+  0.930232584476471, "val_loss": 0.42652812600135803, "val_acc_epoch": 0.930232584476471,
+  "ptl/val_f1": 0.9269734621047974, "train_loss": 0.0008228872902691364}}]'
+seed: 42

@@ -1,0 +1,32 @@
+aug: false
+incumbent_for: gnad10
+model_config:
+  dataset:
+    average_text_length: 362.6942160680802
+    batch: 4
+    name: gnad10
+    num_labels: 9
+    num_training_samples: 6933
+    seq_length: 512
+  model: deepset/bert-base-german-cased-oldvocab
+  optimizer:
+    adam_epsilon: 1.4913843821420603e-07
+    lr: 3.009820136365554e-05
+    momentum: 0.9
+    scheduler: cosine_with_warmup
+    type: Adam
+    weight_decay: 1.2924187866006858e-05
+  training:
+    gradient_accumulation: 8
+    warmup: 10
+run_info: '[{"budget": 2.1666666666666665, "info": {"val_acc_epoch": 0.9961977005004883,
+  "ptl/val_f1": 0.9960858821868896, "val_f1": 0.9961977005004883, "train_loss": 0.014994763769209385,
+  "val_loss_epoch": 0.02338339388370514, "ptl/val_loss": 0.052544817328453064, "val_f1_epoch":
+  0.9961977005004883, "ptl/val_accuracy": 0.9962121248245239, "val_loss": 0.02338339388370514,
+  "val_acc": 0.9961977005004883, "train_acc": 1.0, "train_f1": 1.0}}, {"budget": 13.0,
+  "info": {"val_acc_epoch": 0.9961977005004883, "ptl/val_f1": 0.9964840412139893,
+  "val_f1": 0.9961977005004883, "train_loss": 0.0006975646829232574, "val_loss_epoch":
+  0.01722368784248829, "ptl/val_loss": 0.02160915732383728, "val_f1_epoch": 0.9961977005004883,
+  "ptl/val_accuracy": 0.9965035319328308, "val_loss": 0.01722368784248829, "val_acc":
+  0.9961977005004883, "train_acc": 1.0, "train_f1": 1.0}}]'
+seed: 42

@@ -1,0 +1,28 @@
+aug: false
+incumbent_for: Bundestag-v2
+model_config:
+  dataset:
+    average_text_length: 474.93185603698134
+    batch: 4
+    name: Bundestag-v2
+    num_labels: 7
+    num_training_samples: 136285
+    seq_length: 128
+  model: deepset/bert-base-german-cased-oldvocab
+  optimizer:
+    adam_epsilon: 3.6556515601856904e-07
+    lr: 3.292335216200578e-05
+    momentum: 0.9
+    scheduler: cosine_with_hard_restarts_with_warmup
+    type: Adam
+    weight_decay: 0.00031815289366435095
+  training:
+    gradient_accumulation: 1
+    warmup: 100
+run_info: '[{"budget": 5.0, "info": {"train_loss": 0.22450795769691467, "ptl/val_f1":
+  0.844212532043457, "val_loss_epoch": 0.38278356194496155, "val_loss": 0.38278356194496155,
+  "val_acc": 0.8642433285713196, "ptl/val_loss": 0.38297098875045776, "val_f1_epoch":
+  0.8560971617698669, "train_f1": 0.9333333373069763, "val_acc_epoch": 0.8642433285713196,
+  "val_f1": 0.8560971617698669, "ptl/val_accuracy": 0.8508293628692627, "train_acc":
+  0.9375}}]'
+seed: 42

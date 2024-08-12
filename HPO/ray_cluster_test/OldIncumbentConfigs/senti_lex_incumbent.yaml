@@ -1,0 +1,27 @@
+aug: false
+incumbent_for: senti_lex
+model_config:
+  dataset:
+    average_text_length: 1.0
+    batch: 8
+    name: senti_lex
+    num_labels: 2
+    num_training_samples: 2781
+    seq_length: 512
+  model: deepset/bert-base-german-cased-oldvocab
+  optimizer:
+    adam_epsilon: 1.0673189488340771e-07
+    lr: 3.3982343624325386e-05
+    momentum: 0.9
+    scheduler: linear_with_warmup
+    type: AdamW
+    weight_decay: 0.00024472458408075147
+  training:
+    gradient_accumulation: 1
+    warmup: 500
+run_info: '[{"budget": 15.0, "info": {"val_acc_epoch": 0.8687499761581421, "val_loss":
+  0.7915651798248291, "val_acc": 0.8687499761581421, "ptl/val_accuracy": 0.862416684627533,
+  "ptl/val_loss": 0.6090220212936401, "train_f1": 1.0, "val_loss_epoch": 0.7915651798248291,
+  "train_acc": 1.0, "val_f1_epoch": 0.8668423295021057, "ptl/val_f1": 0.8617599606513977,
+  "train_loss": 0.00030097056878730655, "val_f1": 0.8668423295021057}}]'
+seed: 42

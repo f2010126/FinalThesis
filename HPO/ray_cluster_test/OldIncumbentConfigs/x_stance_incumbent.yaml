@@ -1,0 +1,26 @@
+aug: false
+incumbent_for: x_stance
+model_config:
+  dataset:
+    average_text_length: 42.705565293602106
+    batch: 4
+    name: x_stance
+    num_labels: 10
+    num_training_samples: 45640
+    seq_length: 256
+  model: bert-base-uncased
+  optimizer:
+    adam_epsilon: 1.1814735326531696e-08
+    lr: 2.2633240410589502e-05
+    momentum: 0.9
+    scheduler: linear_with_warmup
+    type: RAdam
+    weight_decay: 0.00011574740967161968
+  training:
+    gradient_accumulation: 1
+    warmup: 10
+run_info: '[{"budget": 6.0, "info": {"val_loss_epoch": 0.00045302920625545084, "ptl/val_loss":
+  0.002346666529774666, "train_f1": 1.0, "train_loss": 0.0006270914454944432, "ptl/val_accuracy":
+  1.0, "ptl/val_f1": 1.0, "val_acc_epoch": 1.0, "val_acc": 1.0, "train_acc": 1.0,
+  "val_f1": 1.0, "val_f1_epoch": 1.0, "val_loss": 0.00045302920625545084}}]'
+seed: 42

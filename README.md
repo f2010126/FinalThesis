@@ -3,6 +3,8 @@ Upload Again Attempt
 
 # File Structure
 
+<img width="617" alt="Schema" src="https://github.com/user-attachments/assets/7d2bdca3-f540-4bff-8892-d69ed5381233">
+
 ## Adapters
 Code for Using PEFT type as part of the framework
 ## Cleaned Datasets
@@ -38,7 +40,6 @@ Search Space
 |warmup steps | categorical | 10, 100, 500 |
 | gradient accumulation steps | categorical | 1, 4, 8, 16|
 | adam epsilon | float | [1e-8, 1e-6]  log |
-
 
 
 

@@ -10,7 +10,7 @@ Core Datasets in format of sentence and label for easier processing. Raw dataset
 # HPO
 ## Ray Cluster Test
 ### MetaDataCreation
-Relevant to training the surrogate
+Relevant to training the surrogate. Contains code to make the performance matrix, training data, train, optimise and predict with the model. 
 
 ### RayCode
 Test stuff for Ray, trying the library and available optimisers of Ray Tune.
@@ -24,13 +24,23 @@ Run create_training_data.py to make the cost matrix, create_training_data.py to 
 
 The files to train (`metamodel_train.py`) and optimise the model  (`metamodel_train.py`) are provided. `metamodel_predict.py` is used to test. 
  
+![Final_perfmatrix_](https://github.com/user-attachments/assets/b1997e0b-a604-42d0-a76d-ef02bae3e244)
 
 # TinyBERT
-Code for distillation of TinyBERT. Consists of 2 stage distillation: General for the Embedded layers, Finetuning for the predicted layers.
+Code for distillation of TinyBERT. Consists of 2 stage distillation: 
+
+General for the Embedded layers
+
+![genDistill_](https://github.com/user-attachments/assets/0b64178f-7957-4d7c-a7bf-bab5bd0091e0)
+
+
+Finetuning for the predicted layers.
+
+![taskDistill_](https://github.com/user-attachments/assets/a2d941cb-dd6b-414d-a3c2-f4ba3942e3f3)
 
 ## Workflow
 - Run the search for the incubent pipelines using `bohb_ray_slurm_template.sh`
-- Create the performance matrix based on the results
+- Create the performance matrix based on the results 
 - Create the Training data using `create_training_data.py`
 - Train, optimise and predict using `metamodel_train.py`, `metamodel_train.py` and `metamodel_predict.py`.
 

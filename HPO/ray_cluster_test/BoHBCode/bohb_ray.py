@@ -1,6 +1,9 @@
 """
 Contains training functions to be used with Ray Train. BOHB would also use these functions to train models and evaluate them.
 """
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
+
 import tempfile
 import torch
 from torchvision.models import resnet18

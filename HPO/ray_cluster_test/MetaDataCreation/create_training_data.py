@@ -1,3 +1,6 @@
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
+
 """
 Using the performance matrix and incumbent configs, we can create a training dataset.
 Each cell in the performance matrix is a training point.

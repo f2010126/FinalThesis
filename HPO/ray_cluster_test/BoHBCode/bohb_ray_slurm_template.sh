@@ -1,5 +1,4 @@
 #!/bin/bash -l
-
 ${PARTITION_OPTION}
 #SBATCH --job-name=${JOB_NAME}
 #SBATCH --output=/work/dlclarge1/dsengupt-zap_hpo_og/logs/${JOB_NAME}.log

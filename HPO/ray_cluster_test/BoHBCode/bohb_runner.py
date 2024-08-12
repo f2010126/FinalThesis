@@ -1,3 +1,6 @@
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
+
 # Add an introduction to the file as a multi-line comment
 """Starts the BOHB optimization process. This is the main file that is run on the master node. Each worker is run as
 a process but will access GPU resources via the Ray cluster. The master node will also access the Ray cluster to

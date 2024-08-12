@@ -1,4 +1,4 @@
-# Add documentation
+# # adapted from ray train/tune code
 """
 Hyperparameter Optimization using Ray Tune and Pytorch Lightning.
 ASHA Scheduler plus Random Search.

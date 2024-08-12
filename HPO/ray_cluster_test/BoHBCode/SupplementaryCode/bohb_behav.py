@@ -1,3 +1,4 @@
+# from a thread on the hpbandster github
 """
 Observe behavior of BOHB across different hyperparameters. taken from an issue on the hpbandster github.
 """

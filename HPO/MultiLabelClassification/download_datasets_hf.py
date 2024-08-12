@@ -1,3 +1,7 @@
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
+
+
 """
 Download a list of datasets from Hugging Face to a given location
 """

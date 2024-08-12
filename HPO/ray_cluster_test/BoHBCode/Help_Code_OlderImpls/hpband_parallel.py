@@ -1,3 +1,5 @@
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
 """
 Old implementation of the BoHB parallel runner. This is the main entry point for the BoHB parallel runner. 
 It is used to start the BoHB optimization process. Each worker is run as a process but will access GPU resources via the Ray cluster.

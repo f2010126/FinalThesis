@@ -1,3 +1,6 @@
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
+
 # Handle the data for the metamodel. Convert the data to a format that the metamodel can understand based on the loss function.
 from ast import parse
 from os import path

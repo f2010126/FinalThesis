@@ -3,6 +3,10 @@
 # python bohb-slurm-launch.py --exp-name test \
 #     --command "python3 bohb_ray.py" \
 
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
+
+# Adapted from https://github.com/NERSC/slurm-ray-cluster
 """
 Generates a SLURM script and submits it to the cluster. The script is generated based on a template file and the given arguments.
 Template file is at: <bohb_slurm_template.sh>

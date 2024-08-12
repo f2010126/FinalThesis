@@ -1,3 +1,6 @@
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
+
 """Contains the data modules for the different tasks. The data modules are used to load the data and prepare it for
 training."""
 

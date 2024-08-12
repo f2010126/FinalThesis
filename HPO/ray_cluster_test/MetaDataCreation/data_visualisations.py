@@ -1,3 +1,5 @@
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
 import os
 import matplotlib.pyplot as plt
 from datasets import load_from_disk

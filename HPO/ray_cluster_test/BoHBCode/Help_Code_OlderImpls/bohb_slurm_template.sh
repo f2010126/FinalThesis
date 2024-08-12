@@ -1,3 +1,4 @@
+# Adapted from https://github.com/NERSC/slurm-ray-cluster
 #!/bin/bash -l
 
 ${PARTITION_OPTION}

@@ -1,4 +1,5 @@
 # Add an introduction to the file as a multi-line comment
+# Copy of Ekrem's code to get the incumbent configuration
 """
 Ekrems code to get the incumbent configuration
 """

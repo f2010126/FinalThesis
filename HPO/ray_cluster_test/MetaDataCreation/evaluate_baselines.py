@@ -1,3 +1,6 @@
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
+
 # Description: This script is used to evaluate the performance of the baselines on the test set.
 import argparse
 from ast import parse

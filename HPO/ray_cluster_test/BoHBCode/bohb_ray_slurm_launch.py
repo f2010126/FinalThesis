@@ -2,7 +2,10 @@
 # Usage:
 # python bohb-slurm-launch.py --exp-name test \
 #     --command "rllib train --run PPO --env CartPole-v0"
+# Copyright (c) [2024] [Dipti Sengupta]
+# Licensed under the CC0 1.0 Universal See LICENSE file in the project root for full license information.
 
+# Adapted from https://github.com/NERSC/slurm-ray-cluster
 import argparse
 from re import A
 import subprocess

@@ -17,7 +17,33 @@ Test stuff for Ray, trying the library and available optimisers of Ray Tune.
 
 ### BoHBCode
 #### HPO:
-Adjust `bohb_ray_slurm_template.sh` as needed and execute it. It starts a RayCluster before starting the BoHB runner. The BoHB runner starts multiple processes for HPO and results are stored. There is no Multiprocessing clash due to Ray having a separate environment.
+Adjust `bohb_ray_slurm_template.sh` as needed and execute it. It starts a RayCluster before starting the BoHB runner. The BoHB runner, bohb_runner.py starts multiple processes for HPO and results are stored. There is no Multiprocessing clash due to Ray having a separate environment. Parameter space is defined in `bohb_ray_cluster.py`
+
+Search Space
+
+
+| Name    | Type | Range/Value|
+| -------- | ------- |------------|
+| max seq length | categorical | 128, 256, 512 |
+| train batch size | categorical | 4, 8, 16    |
+| model name | categorical | Bert base uncased, Bert base multilingual cased 
+| |             | Bert base german cased oldvocab,gottbert base  |
+| |             | TinyBERT General 4L de, Alberti bert base multilingual cased |
+| |             | Distilbert base german cased    |
+| optimizer | categorical | Adam, AdamW, SGD , RAdam |
+| learning rate | float | [2e-5 7e-5] log |
+| scheduler | categorical | linear with warmup , cosine with warmup|
+| | |cosine with hard restarts with warmup, polynomial decay with warmup|
+| weight decay | categorical | [1e-5, 1e-3] log |
+|warmup steps | categorical | 10, 100, 500 |
+| gradient accumulation steps | categorical | 1, 4, 8, 16|
+| adam epsilon | float | [1e-8, 1e-6]  log |
+
+
+
+
+
+
 
 #### Surrogate Training
 Run create_training_data.py to make the cost matrix, create_training_data.py to make. the training data for the model.
